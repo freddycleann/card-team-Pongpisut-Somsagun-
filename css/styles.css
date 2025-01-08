@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: aliceblue;
+}
+
+.card-img-top{
+    border-radius: 50%;
+    height: 250px !important;
+    width: 250px !important;
+    position: relative;
+    left: 80px;
+    top: -80px;
+    object-fit: cover;
+}
+.card {
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 100px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px 5px rgba(0, 123, 255, 0.5);
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+.card-body {
+    margin-top: -50px;
+}
+.facebook-icon:hover {
+    color: #4267B2; /* Facebook blue */
+}
+
+.linkedin-icon:hover {
+    color: #0077B5; /* LinkedIn blue */
+}
+
+.email-icon:hover {
+    color: #D44638; /* Email red */
+}
+
+.whatsapp-icon:hover {
+    color: #25D366; /* WhatsApp green */
+}
+
+i {
+    font-size: 2rem;
+    color: gray;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+i:hover {
+    transform: scale(1.2); /* Optional zoom effect */
+}
